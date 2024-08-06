@@ -75,7 +75,10 @@ const Navbar = () => {
             <div className="me-4 sm:me-0">
               <button
                 className="cursor-pointer border bg-slate-100 px-2 py-1 rounded-md"
-                data-hs-overlay="#hs-scroll-inside-body-modal"
+                aria-haspopup="dialog"
+                aria-expanded="false"
+                aria-controls="hs-scale-animation-modal"
+                data-hs-overlay="#hs-scale-animation-modal"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

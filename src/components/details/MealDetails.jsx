@@ -151,7 +151,7 @@ const MealDetails = ({ meal }) => {
         <small className="text-base">Source : </small>
         <a
           href={meal.strSource}
-          className="text-sm text-blue-700 underline"
+          className="text-sm text-blue-700 underline text-wrap"
           target="_blank"
           rel="noopener noreferrer"
         >

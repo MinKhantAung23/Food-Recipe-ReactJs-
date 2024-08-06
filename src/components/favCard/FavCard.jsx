@@ -2,11 +2,23 @@
 import { useDispatch } from "react-redux";
 import { removeMeal } from "../../store/features/favMealSlice";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import ConfirmBox from "./ConfirmBox";
 
 const FavCard = ({ meal }) => {
   const dispatch = useDispatch();
+
+  const [showModal, setShowModal] = useState(false);
+  const [mealToDelete, setMealToDelete] = useState(null);
+
   const handleRemove = (meal) => {
-    dispatch(removeMeal(meal));
+    setMealToDelete(meal);
+    setShowModal(true);
+  };
+
+  const handleConfirmDelete = () => {
+    dispatch(removeMeal(mealToDelete));
+    setShowModal(false);
   };
   return (
     <div className="flex flex-col sm:flex-row justify-between m-4 gap-10 bg-zinc-50 hover:bg-gray-50 border border-secondary hover:border-primary rounded-md shadow hover:shadow-lg p-4">
@@ -28,14 +40,17 @@ const FavCard = ({ meal }) => {
         </div>
       </div>
       <div className="text-end">
-        <button onClick={() => handleRemove(meal)}>
+        <button
+          onClick={() => handleRemove(meal)}
+          className="bg-transparent hover:bg-gray-300 p-4 rounded-full duration-300"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="size-5 fill-red-400 cursor-pointer"
+            className="size-6 fill-red-400 cursor-pointer hover:fill-red-500"
           >
             <path
               strokeLinecap="round"
@@ -45,6 +60,11 @@ const FavCard = ({ meal }) => {
           </svg>
         </button>
       </div>
+      <ConfirmBox
+        show={showModal}
+        onClose={() => setShowModal(false)}
+        onConfirm={handleConfirmDelete}
+      />
     </div>
   );
 };
