@@ -9,7 +9,6 @@ export const favMealSlice = createSlice({
     name: 'favMeal',
     initialState,
     reducers: {
-
         addMeal: (state, action) => {
             const meal = action.payload;
             const existMeal = state.meals.find(meal => meal.idMeal === action.payload.idMeal);

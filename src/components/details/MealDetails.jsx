@@ -148,15 +148,31 @@ const MealDetails = ({ meal }) => {
           </a>
         </div>
 
-        <small className="text-base">Source : </small>
-        <a
-          href={meal.strSource}
-          className="text-sm text-blue-700 underline text-wrap"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {meal.strSource}
-        </a>
+        <div className="flex justify-start items-center">
+          <small className="text-base me-3">Source</small>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="size-4 me-3 "
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5"
+            />
+          </svg>
+          <a
+            href={meal.strSource}
+            className="text-base text-blue-600 hover:text-blue-800 underline "
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Watch on website for full recipe
+          </a>
+        </div>
 
         <div className="flex justify-end my-4">
           <button
