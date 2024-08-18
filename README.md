@@ -1,3 +1,3 @@
 # React 
 
-https://xfoodie.netlify.app/
+https://recipekitchen.netlify.app/
