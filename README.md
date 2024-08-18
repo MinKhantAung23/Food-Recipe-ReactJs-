@@ -1,3 +1,3 @@
-# React + Vite
+# React 
 
-https://legendary-bombolone-ba8231.netlify.app/
+https://xfoodie.netlify.app/
